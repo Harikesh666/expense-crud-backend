@@ -13,7 +13,7 @@ const pool = new Pool({
     port: process.env.DB_PORT,
     max: 10,
     ssl: {
-        rejectUnauthorized: false, // Required for Render/Postgres
+        rejectUnauthorized: false, 
     },
 });
 
