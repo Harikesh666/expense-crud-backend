@@ -11,7 +11,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors({ origin: "https://expense-crud-frontend.vercel.app/" }));
+app.use(cors({
+  origin: "https://expense-crud-frontend.vercel.app", 
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true 
+}));
 
 pool.connect()
     .then((client) => {
